@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pragya Batu - Creative Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7ff 0%, #fff5f9 100%);
+            color: #2c2c2c;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px 0 30px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid rgba(0, 150, 200, 0.15);
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0096c8;
+            font-weight: 700;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0096c8, #d946ef);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Header - About Section */
+        .about-header {
+            text-align: center;
+            padding: 100px 40px;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, rgba(0, 150, 200, 0.08) 0%, rgba(217, 70, 239, 0.08) 100%);
+            border-radius: 25px;
+            border: 2px solid rgba(0, 150, 200, 0.15);
+        }
+
+        .name {
+            font-size: 4.5em;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #0096c8, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: #0096c8;
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .about-text {
+            font-size: 1.15em;
+            color: #4a4a4a;
+            line-height: 2;
+            max-width: 950px;
+            margin: 0 auto 40px;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0096c8, #00b4e3);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 150, 200, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 150, 200, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #d946ef, #ec4899);
+            color: white;
+            box-shadow: 0 10px 30px rgba(217, 70, 239, 0.3);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(217, 70, 239, 0.4);
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            font-size: 3em;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            background: linear-gradient(135deg, #0096c8, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 5px;
+            background: linear-gradient(90deg, #0096c8, #d946ef);
+            border-radius: 3px;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .experience-card {
+            background: white;
+            border: 2px solid #e8f0ff;
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 150, 200, 0.08);
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0096c8, #d946ef);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 150, 200, 0.15);
+            border-color: #d946ef;
+        }
+
+        .experience-card h3 {
+            color: #0096c8;
+            font-size: 1.5em;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .experience-card .company {
+            color: #d946ef;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.98em;
+            letter-spacing: 0.3px;
+        }
+
+        .experience-card .date {
+            color: #999;
+            font-size: 0.92em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .experience-card ul {
+            list-style: none;
+        }
+
+        .experience-card li {
+            color: #555;
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .experience-card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #d946ef;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .skill-box {
+            background: white;
+            border: 2px solid #e8f0ff;
+            border-radius: 18px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 150, 200, 0.05);
+        }
+
+        .skill-box:hover {
+            background: linear-gradient(135deg, rgba(0, 150, 200, 0.05), rgba(217, 70, 239, 0.05));
+            border-color: #d946ef;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(217, 70, 239, 0.15);
+        }
+
+        .skill-box h3 {
+            color: #0096c8;
+            margin-bottom: 18px;
+            font-size: 1.3em;
+            font-weight: 800;
+        }
+
+        .skill-box ul {
+            list-style: none;
+        }
+
+        .skill-box li {
+            color: #555;
+            padding: 9px 0;
+            font-size: 0.98em;
+            font-weight: 500;
+        }
+
+        .skill-box li::before {
+            content: '✦ ';
+            color: #d946ef;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid #e8f0ff;
+            box-shadow: 0 5px 20px rgba(0, 150, 200, 0.08);
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 150, 200, 0.15);
+            border-color: #d946ef;
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #0096c8, #d946ef);
+            padding: 35px;
+            color: white;
+        }
+
+        .project-header h3 {
+            font-size: 1.4em;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .project-content {
+            padding: 35px;
+        }
+
+        .project-content ul {
+            list-style: none;
+        }
+
+        .project-content li {
+            color: #555;
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .project-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #d946ef;
+            font-weight: bold;
+        }
+
+        /* Education Section */
+        .education-card {
+            background: white;
+            border: 2px solid #e8f0ff;
+            border-radius: 20px;
+            padding: 45px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+            box-shadow: 0 5px 20px rgba(0, 150, 200, 0.08);
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0096c8, #d946ef);
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 150, 200, 0.15);
+        }
+
+        .education-card h3 {
+            color: #0096c8;
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+
+        .education-card .university {
+            color: #d946ef;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.08em;
+            letter-spacing: 0.3px;
+        }
+
+        .education-card p {
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #0096c8, #d946ef);
+            border-radius: 25px;
+            padding: 80px 50px;
+            text-align: center;
+            color: white;
+        }
+
+        .contact-section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-section p {
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            opacity: 0.98;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .email-link {
+            display: inline-block;
+            font-size: 1.2em;
+            color: white;
+            font-weight: 800;
+            text-decoration: none;
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+            padding: 15px 35px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50px;
+            border: 2px solid white;
+            letter-spacing: 0.3px;
+        }
+
+        .email-link:hover {
+            background: white;
+            color: #0096c8;
+            transform: translateY(-5px);
+        }
+
+        /* Social Links with Brand Colors */
+        .social-links {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 3em;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* LinkedIn - Official Blue */
+        .social-icon.linkedin {
+            color: #0077b5;
+        }
+
+        /* GitHub - Dark */
+        .social-icon.github {
+            color: #181717;
+        }
+
+        /* Medium - Black */
+        .social-icon.medium {
+            color: #000000;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px;
+            color: #999;
+            border-top: 2px solid rgba(0, 150, 200, 0.1);
+            margin-top: 80px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .name {
+                font-size: 3.2em;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .about-header {
+                padding: 70px 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                gap: 25px;
+            }
+
+            .name {
+                font-size: 2.3em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .about-header {
+                padding: 50px 20px;
+            }
+
+            .skills-container,
+            .experience-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .contact-section {
+                padding: 50px 25px;
+            }
+
+            .social-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2.2em;
+            }
+
+            .social-links {
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <!-- About Header -->
+        <section id="home" class="about-header">
+            <div class="about-content">
+                <div class="name">PRAGYA BATU</div>
+                <div class="tagline">Creative Professional & Digital Strategist</div>
+                <p class="about-text">
+                    I'm a BBA (Honours) student at National Forensic Sciences University with hands-on experience in HR management, digital marketing strategy, and creative content creation. I transform ideas into compelling digital experiences through strategic thinking, innovative approaches, and meticulous execution. Every project I work on reflects my commitment to excellence and meaningful impact.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                        Let's Connect
+                    </button>
+                    <a href="https://linkedin.com/in/pragyabatu" class="btn btn-secondary">
+                        Explore More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>HR Manager</h3>
+                    <div class="company">Intellisoft Company</div>
+                    <div class="date">Nov 2024 - July 2025</div>
+                    <ul>
+                        <li>Managed recruitment, onboarding & employee engagement</li>
+                        <li>Developed comprehensive HR policies</li>
+                        <li>Coordinated seamless HR operations</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <h3>Digital Marketing Manager</h3>
+                    <div class="company">Marketing Strategy</div>
+                    <div class="date">Oct 2024 - Nov 2024</div>
+                    <ul>
+                        <li>Managed social media strategy & content creation</li>
+                        <li>Optimized digital marketing campaigns</li>
+                        <li>Increased brand visibility & engagement</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <h3>Content Writer</h3>
+                    <div class="company">Repute Media & Repute Today</div>
+                    <div class="date">June 2024 - Sept 2024</div>
+                    <ul>
+                        <li>Researched and wrote engaging articles</li>
+                        <li>Managed publication timelines & coordination</li>
+                        <li>Created SEO-optimized content</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-box">
+                    <h3>💼 Business & HR</h3>
+                    <ul>
+                        <li>HR Management</li>
+                        <li>Employee Relations</li>
+                        <li>Recruitment & Onboarding</li>
+                        <li>Strategic Planning</li>
+                    </ul>
+                </div>
+
+                <div class="skill-box">
+                    <h3>📱 Digital Marketing</h3>
+                    <ul>
+                        <li>Social Media Strategy</li>
+                        <li>Content Marketing</li>
+                        <li>Campaign Management</li>
+                        <li>Brand Building</li>
+                    </ul>
+                </div>
+
+                <div class="skill-box">
+                    <h3>✍️ Content & Design</h3>
+                    <ul>
+                        <li>Report Writing</li>
+                        <li>Copywriting</li>
+                        <li>Canva Design</li>
+                        <li>Adobe Photoshop</li>
+                    </ul>
+                </div>
+
+                <div class="skill-box">
+                    <h3>🔍 Research & Analysis</h3>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Market Research</li>
+                        <li>Trend Forecasting</li>
+                        <li>Insights Generation</li>
+                    </ul>
+                </div>
+
+                <div class="skill-box">
+                    <h3>💻 Tools & Platforms</h3>
+                    <ul>
+                        <li>Google Workspace</li>
+                        <li>Microsoft Office</li>
+                        <li>Adobe Creative Suite</li>
+                        <li>Content Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-box">
+                    <h3>🎯 Professional</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Problem Solving</li>
+                        <li>Team Collaboration</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title">Projects & Achievements</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>📝 Blog Writer & Content Creator</h3>
+                    </div>
+                    <div class="project-content">
+                        <p style="margin-bottom: 15px; color: #666;"><strong>Medium, Quora & Substack</strong></p>
+                        <ul>
+                            <li>Publish engaging blogs on meaningful topics</li>
+                            <li>Apply SEO strategies to maximize reach</li>
+                            <li>Create knowledge-based content</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>Integrated BBA-MBA</h3>
+                <div class="university">National Forensic Sciences University (NFSU)</div>
+                <p><strong>Location:</strong> Gandhinagar, Gujarat</p>
+                <p><strong>Duration:</strong> 2025 - 2030</p>
+                <p><strong>Focus:</strong> Business Strategy & Digital Innovation</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-section">
+                <h2>Let's Work Together</h2>
+                <p>I'm excited to connect with you and explore new opportunities</p>
+                <a href="mailto:pragya@pragyabatu.tech" class="email-link">
+                    ✉️ pragya@pragyabatu.tech
+                </a>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/pragyabatu" class="social-icon linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/pragyabatu" class="social-icon github" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://medium.com/@pragyabatu" class="social-icon medium" title="Medium">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Pragya Batu. | pragyabatu.tech</p>
+        </footer>
+    </div>
+</body>
+</html>
