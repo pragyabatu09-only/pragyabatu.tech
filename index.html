@@ -34,7 +34,7 @@
     /* HERO */
     #home{min-height:100vh;display:flex;align-items:center;padding-top:80px;}
     .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%;}
-    .hero-title{font-family:'Syne',sans-serif;font-size:clamp(3em,5.5vw,5em);font-weight:800;line-height:1.0;letter-spacing:-3px;margin-bottom:24px;color:var(--text);}
+    .hero-title{font-family:'Syne',sans-serif;font-size:clamp(2.2em,4vw,3.4em);font-weight:800;line-height:1.0;letter-spacing:-2px;margin-bottom:24px;color:var(--text);}
     .hero-title .highlight{display:inline-block;background:#ffe500;color:var(--text);padding:2px 14px;border-radius:6px;}
     .hero-bio{color:var(--muted);line-height:1.85;font-size:1.05em;margin-bottom:40px;max-width:460px;}
     .hero-btns{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
@@ -48,8 +48,8 @@
     .hero-soc:hover{color:var(--text);transform:translateY(-3px);}
 
     /* HERO VISUAL — photo */
-    .hero-visual{display:flex;justify-content:flex-end;align-items:center;}
-    .photo-frame{position:relative;width:400px;height:500px;}
+    .hero-visual{display:flex;justify-content:flex-end;align-items:center;perspective:1200px;}
+    .photo-frame{position:relative;width:400px;height:500px;transition:transform 0.15s ease-out;will-change:transform;}
     .photo-bg{position:absolute;inset:0;border-radius:28px;background:linear-gradient(145deg,#dbeeff,#ede9fe);transform:rotate(2.5deg);}
     .photo-main{
       position:absolute;inset:0;border-radius:28px;
@@ -142,13 +142,6 @@
     .coming-soon h3{color:var(--text);margin-bottom:10px;}
     .coming-soon p{color:var(--muted);font-size:0.93em;}
 
-    /* RESOURCES */
-    #resources{padding:110px 0;background:var(--bg2);}
-    .res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
-    .res-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:26px;transition:all 0.3s;position:relative;overflow:hidden;}
-    .res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--pink));}
-    .res-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.08);border-color:rgba(124,58,237,0.2);}
-
     /* RESUME */
     #resume{padding:80px 0;}
     .resume-box{background:var(--bg2);border:1.5px solid var(--border);border-radius:20px;padding:60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
@@ -183,8 +176,10 @@
     .reveal.visible{opacity:1;transform:translateY(0);}
 
     @media(max-width:960px){
-      .hero-inner,.about-grid{grid-template-columns:1fr;}
-      .hero-visual{display:none;}
+      .hero-inner{grid-template-columns:1fr;}
+      .about-grid{grid-template-columns:1fr;}
+      .hero-visual{justify-content:center;order:-1;margin-bottom:36px;}
+      .photo-frame{width:300px;height:375px;}
       nav ul{gap:16px;}
       .wrap{padding:0 24px;}
       .contact-box{padding:50px 28px;}
@@ -192,6 +187,8 @@
     }
     @media(max-width:600px){
       .nh{display:none;}
+      .photo-frame{width:240px;height:300px;}
+      .hero-title{font-size:clamp(2.2em,9vw,3em);}
     }
   </style>
 </head>
@@ -206,7 +203,6 @@
       <li class="nh"><a href="#skills">Skills</a></li>
       <li class="nh"><a href="#experience">Experience</a></li>
       <li class="nh"><a href="#projects">Projects</a></li>
-      <li class="nh"><a href="#resources">Resources</a></li>
       <li class="nh"><a href="#resume">Resume</a></li>
       <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
     </ul>
@@ -219,15 +215,14 @@
     <div class="hero-inner">
       <div>
         <h1 class="hero-title">
-          Hey, I'm<br>
-          <span class="highlight">Pragya</span>.
+          Hey, I'm <span class="highlight">Pragya</span>.
         </h1>
         <p class="hero-bio">
           I turn complex problems into clear strategies and compelling stories. From campaigns to content to data-driven decisions — I work at the intersection of business, creativity, and impact.
         </p>
         <div class="hero-btns">
           <a href="#projects" class="btn btn-dark">Browse Work →</a>
-          <a href="#resources" class="btn btn-ghost">Free Resources →</a>
+          <a href="#resume" class="btn btn-ghost">View Resume →</a>
         </div>
         <div class="hero-socials">
           <a href="https://linkedin.com/in/pragyabatu" class="hero-soc" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -517,23 +512,6 @@
   </div>
 </section>
 
-<!-- RESOURCES -->
-<section id="resources">
-  <div class="wrap">
-    <div class="s-head center reveal">
-      <span class="s-eye">Free Stuff</span>
-      <h2 class="s-title">Resources & Guides</h2>
-      <div class="s-line"></div>
-    </div>
-    <div class="res-grid reveal">
-      <div class="coming-soon" style="border-color:rgba(124,58,237,0.15);">
-        <div class="icon">📚</div>
-        <h3>Knowledge Hub — Coming Soon</h3>
-        <p>Templates, guides, and resources from my own learning journey. Follow on LinkedIn to be the first to know.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- RESUME -->
 <section id="resume">
